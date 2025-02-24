@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("02_Aryan_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9738e5c8f8a1f33781bbcd3e87482ab6b44345da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9cfe549b0bcb23628eb642f7ee3093ba3bf2bbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("02_Aryan_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("02_Aryan_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
