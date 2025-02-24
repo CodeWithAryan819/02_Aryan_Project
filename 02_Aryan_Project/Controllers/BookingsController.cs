@@ -1,10 +1,12 @@
 ﻿using _02_Aryan_Project.Data;
 using _02_Aryan_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _02_Aryan_Project.Controllers
 {
+    [Authorize]
     [Route("api/[controller]/{action}")]
     [ApiController]
     public class BookingsController : ControllerBase
