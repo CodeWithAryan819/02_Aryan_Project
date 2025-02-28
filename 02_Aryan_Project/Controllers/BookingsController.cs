@@ -19,23 +19,37 @@ namespace _02_Aryan_Project.Controllers
             _context = context;
         }
 
-        // Get all bookings from the database
+        // Get all bookings from the database (Admin only)
         [HttpGet]
         public IActionResult GetBookings()
         {
+            // Check if the logged-in user is an admin
+            if (!User.IsInRole("Admin"))
+            {
+                return Unauthorized("Only admins can view all bookings.");
+            }
+
             return Ok(_context.Bookings);
         }
 
-        // Get a specific booking by its ID
+        // Get a specific booking by its ID (Admin only)
         [HttpGet("{id}")]
         public IActionResult GetById(int? id)
         {
+            // Check if the logged-in user is an admin
+            if (!User.IsInRole("Admin"))
+            {
+                return Unauthorized("Only admins can view this booking.");
+            }
+
             var booking = _context.Bookings.FirstOrDefault(b => b.BookingID == id);
             if (booking == null)
                 return Problem(detail: "Booking with Id " + id + " is not found.", statusCode: 404);
 
             return Ok(booking);
         }
+
+
 
         // Create a new booking
         [HttpPost]
