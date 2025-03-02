@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("02_Aryan_Project")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27217be31bd0cf93dfaf3c2b29e44f2b9a0c8eae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44b3e53a81453d9572e114771196d719874d66b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("02_Aryan_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("02_Aryan_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

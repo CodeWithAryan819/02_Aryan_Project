@@ -38,7 +38,7 @@ namespace _02_Aryan_Project.Controllers
             // Get the secret key from the configuration settings
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
-            // Generate the JWT token
+            // Generate the JWT token with claims and expiration
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"], // Issuer of the token
                 audience: _configuration["JWT:ValidAudience"], // Audience for the token
@@ -61,6 +61,8 @@ namespace _02_Aryan_Project.Controllers
         {
             // Find user by username
             var user = await _userManager.FindByNameAsync(model.Username);
+
+            // Check if user exists and password is correct
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
                 // Get user roles
@@ -128,7 +130,7 @@ namespace _02_Aryan_Project.Controllers
             if (await _roleManager.RoleExistsAsync(UserRoles.Member))
                 await _userManager.AddToRoleAsync(user, UserRoles.Member);
 
-            return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+            return Ok(new Response { Status = "Success", Message = "Member created successfully!" });
         }
 
         /// <summary>
@@ -168,7 +170,7 @@ namespace _02_Aryan_Project.Controllers
             if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
                 await _userManager.AddToRoleAsync(user, UserRoles.Admin);
 
-            return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+            return Ok(new Response { Status = "Success", Message = "Admin created successfully!" });
         }
     }
 }
